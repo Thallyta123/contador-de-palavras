@@ -1,44 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Exercício: Analizador de Texto</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <header>
-            <h1>Analisador de Texto</h1>
-            <p>Insira um texto no campo à esquerda e clique em "Analisar Texto" para ver as estatísticas</p>
-        </header>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício: Analisador de Texto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Analisador de Texto</h1>
+        <p>Insira um texto no campo à esquerda e clique em "Analisar Texto" para ver as estatísticas</p>
+    </header>
+    
     <div class="instructions">
         <h3>Exercício: Complete as funções JavaScript</h3>
         <p>Seu objetivo é implementar as seguintes funcionalidades no arquivo JavaScript:</p>
         <ul>
             <li><strong>contarPalavras(texto)</strong>: Retorna o número de palavras no texto</li>
             <li><strong>contarCaracteres(texto)</strong>: Retorna o número de caracteres (incluindo espaços)</li>
-            <li><strong>palavrasMaisFrequentes(texto)</strong>: Retorna a palavra que mais aparece no texto9</li>
-            <li><strong>tempoLeitura(texto)</strong>: Retorna "Fácil", "Médio" ou "Difícil" baseado no comprimento médio das palavras</li>
-            <li><strong>gerarNuvemPalavras(texto)</strong>: Gerar uma nuvem de palavras com as 10 palavras mais frequentes</li>
+            <li><strong>palavraMaisFrequente(texto)</strong>: Retorna a palavra que mais aparece no texto</li>
+            <li><strong>tempoLeitura(texto)</strong>: Calcula o tempo estimado de leitura (considerando 200 palavras por minuto)</li>
+            <li><strong>calcularLegibilidade(texto)</strong>: Retorna "Fácil", "Médio" ou "Difícil" baseado no comprimento médio das palavras</li>
+            <li><strong>gerarNuvemPalavras(texto)</strong>: Gera uma nuvem de palavras com as 10 palavras mais frequentes</li>
         </ul>
-        <p><strong>Nota</strong> As funções já estão implementando no arquivo script.js, mas você pode modificar e melhorá-las</p>  
+        <p><strong>Nota:</strong> As funções já estão implementadas no arquivo script.js, mas você pode modificar e melhorá-las.</p>
     </div>
-
+    
     <div class="container">
         <div class="input-section">
-            <div class="input-section">
-                <h2>Digite ou cole seu texto:</h2>
-                <textarea id="text-input" placeholder="Digite ou cole seu texto aqui...">O JavaScript é uma linguagem de programação amplamente ultilizada no desinvolvimeto web. Com JavaScript, podemos criar páginas interativas, validar formulários, criar animações e muito mais. Este exercício tem como objetivo praticar HTML, CSS e JavaScript de forma integrada, desenvolvendo um analisador de texto completo. Vamos contar palavras, caracteres e encontrar a palavra mais frequente no texto fornecido.</textarea>
-
-                <div class="container">
-                    <div class="input-section">
-                        <h2>Digite ou cole seu texto:</h2>
-                        <textarea id="text-input" placeholder="Digite ou cole seu texto aqui..."></textarea>
-                    </div>
+            <h2>Digite ou cole seu texto:</h2>
+            <textarea id="text-input" placeholder="Digite ou cole seu texto aqui...">O JavaScript é uma linguagem de programação amplamente utilizada no desenvolvimento web. Com JavaScript, podemos criar páginas interativas, validar formulários, criar animações e muito mais. Este exercício tem como objetivo praticar HTML, CSS e JavaScript de forma integrada, desenvolvendo um analisador de texto completo. Vamos contar palavras, caracteres e encontrar a palavra mais frequente no texto fornecido.</textarea>
+            
+            <div class="buttons">
+                <button id="analyze-btn">Analisar Texto</button>
+                <button id="clear-btn">Limpar Tudo</button>
+            </div>
+        </div>
+        
+        <div class="results-section">
+            <h2>Resultados da Análise:</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-label">Palavras</div>
+                    <div id="word-count" class="stat-value">0</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-label">Caracteres</div>
+                    <div id="char-count" class="stat-value">0</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-label">Tempo de Leitura</div>
+                    <div id="reading-time" class="stat-value">0 min</div>
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-label">Nível</div>
+                    <div id="readability" class="stat-value">-</div>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <div class="highlight-title">Palavra Mais Frequente:</div>
+                <div id="most-frequent" class="highlight-value">Nenhuma</div>
+            </div>
+            
+            <div class="word-cloud">
+                <div class="word-cloud-title">Palavras Mais Frequentes:</div>
+                <div id="word-cloud-container">
+                    <!-- As palavras mais frequentes serão inseridas aqui pelo JavaScript -->
                 </div>
             </div>
         </div>
     </div>
-    </body>
+    
+    <footer>
+        <p>Exercício de HTML, CSS e JavaScript - Nível Intermediário</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
