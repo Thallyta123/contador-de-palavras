@@ -80,5 +80,19 @@ function calcularLegibilidade(texto) {
 }
 
 function gerarNuvemPalavras(texto) {
-    texto = texto.toLowerCase()
+
+    texto = texto.toLowerCase().replace(/[.,!?;:()"'-])/g, '');
+
+    const frequencias = {};
+
+    for (const palavras of palavras) {
+        if (frequencias[palavras]) {
+            frequencias[palavras]++;
+        } else {
+            frequencias[palavras] = 1;
+        }
+    }
+
+    const palavraOrdenadas = Object.entries(frequencias)
+    .sort((a, b) => b[1])
 }
